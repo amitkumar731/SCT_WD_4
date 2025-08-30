@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillCraft Technology - To-Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-tasks logo-icon"></i>
+                <h1>SkillCraft To-Do App</h1>
+            </div>
+            <div class="date-display" id="current-date">Monday, January 1, 2023</div>
+        </div>
+
+        <div class="app-container">
+            <div class="input-section">
+                <input type="text" class="task-input" id="task-input" placeholder="Enter a new task...">
+                <input type="datetime-local" class="date-time-input" id="datetime-input">
+                <button class="add-btn" id="add-task-btn">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All Tasks</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="overdue">Overdue</button>
+            </div>
+
+            <div class="tasks-stats">
+                <div>Total: <span id="total-tasks">0</span> tasks</div>
+                <div>Completed: <span id="completed-tasks">0</span> tasks</div>
+                <div>Pending: <span id="pending-tasks">0</span> tasks</div>
+            </div>
+
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be added here dynamically -->
+                <div class="empty-state" id="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>No tasks yet</p>
+                    <p>Add a task to get started!</p>
+                </div>
+            </ul>
+        </div>
+
+        <!-- Edit Task Modal -->
+        <div class="modal" id="edit-modal">
+            <div class="modal-content">
+                <h2>Edit Task</h2>
+                <input type="text" class="modal-input" id="edit-task-input" placeholder="Edit task...">
+                <input type="datetime-local" class="modal-input" id="edit-datetime-input">
+                <div class="modal-actions">
+                    <button class="modal-btn cancel-btn" id="cancel-edit-btn">Cancel</button>
+                    <button class="modal-btn save-btn" id="save-edit-btn">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Support</a>
+            <p>Designed with Canva</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
